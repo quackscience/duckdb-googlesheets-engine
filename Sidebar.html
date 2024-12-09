@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <button id="runBtn" disabled>Execute Query</button>
   <pre id="status"></pre>
   <pre id="results"></pre>
 
@@ -9,7 +8,6 @@
     let db;
     const status = document.getElementById('status');
     const results = document.getElementById('results');
-    const runBtn = document.getElementById('runBtn');
 
     async function logStatus(msg) {
       console.log(msg);
@@ -37,7 +35,7 @@
         URL.revokeObjectURL(workerUrl);
 
         logStatus('DuckDB Ready');
-        runBtn.disabled = false;
+        runQuery();
       } catch (err) {
         logStatus('Error: ' + err.message);
       }
@@ -83,8 +81,6 @@
         logStatus('Error: ' + err.message);
       }
     }
-
-    runBtn.onclick = runQuery;
     
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@latest/dist/duckdb-browser.js';

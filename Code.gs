@@ -1,5 +1,5 @@
 function onOpen() {
-  SpreadsheetApp.getUi().createMenu('SQL').addItem('Run', 'runSQL').addToUi();
+  SpreadsheetApp.getUi().createMenu('DuckDB').addItem('Run', 'runSQL').addToUi();
 }
 
 function runSQL() {
