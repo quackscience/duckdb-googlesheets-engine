@@ -4,7 +4,8 @@
 https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M/6
 
 ## Install
-### Library
+#### Library
+- Open a Google Sheets document
 - Browse to `Extensions` > `Apps Script`
 - At the left of the Apps Script editor, next to "Libraries," click `Add`
 - In the "Script ID" field, paste `1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M`
