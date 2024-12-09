@@ -10,7 +10,7 @@ Copy the `.gs` + `.html` and Deploy as Library
 ![image](https://gist.github.com/user-attachments/assets/1a04ace7-519c-4f22-b64a-9ffbc5d7277b)
 
 ## Usage
-<img src="https://i.imgur.com/llF05Rb.gif" />
+<img src="https://i.imgur.com/nRxtLUb.gif" />
 
 
 
