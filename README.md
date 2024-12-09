@@ -1,5 +1,8 @@
 # Google Sheets DuckDB Engine
 
+## Macro Library
+https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M/6
+
 ## Install
 Browse to Extensions > Apps Script
 
