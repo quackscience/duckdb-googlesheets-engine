@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button id="runBtn" disabled>Execute Query</button>
+  <pre id="status"></pre>
+  <pre id="results"></pre>
+
+  <script type="module">
+    let db;
+    const status = document.getElementById('status');
+    const results = document.getElementById('results');
+    const runBtn = document.getElementById('runBtn');
+
+    async function logStatus(msg) {
+      console.log(msg);
+      status.textContent += msg + '\n';
+    }
+
+    async function loadDuckDB() {
+      logStatus('Loading DuckDB...');
+      const JSDELIVR = 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm';
+      const DUCKDB_CONFIG = {
+        mainModule: JSDELIVR + '@latest/dist/duckdb-eh.wasm',
+        mainWorker: JSDELIVR + '@latest/dist/duckdb-browser-eh.worker.js',
+      };
+
+      try {
+        const workerUrl = URL.createObjectURL(
+          new Blob([`importScripts("${DUCKDB_CONFIG.mainWorker}");`], 
+          { type: 'text/javascript' })
+        );
+
+        const worker = new Worker(workerUrl);
+        const logger = new duckdb.ConsoleLogger();
+        db = new duckdb.AsyncDuckDB(logger, worker);
+        await db.instantiate(DUCKDB_CONFIG.mainModule);
+        URL.revokeObjectURL(workerUrl);
+
+        logStatus('DuckDB Ready');
+        runBtn.disabled = false;
+      } catch (err) {
+        logStatus('Error: ' + err.message);
+      }
+    }
+
+    async function runQuery() {
+      try {
+        const query = await new Promise((resolve, reject) => {
+          google.script.run
+            .withSuccessHandler(q => {
+              logStatus('Got query: ' + q);
+              resolve(q);
+            })
+            .withFailureHandler(reject)
+            .getSelectedQuery();
+        });
+
+        logStatus('Executing query...');
+        const conn = await db.connect();
+        const result = await conn.query(query);
+        const data = result.toArray().map(row => Array.from(row));
+        
+        logStatus('Query results:');
+        logStatus(JSON.stringify(data, null, 2));
+
+        if (data && data.length > 0) {
+          await new Promise((resolve, reject) => {
+            google.script.run
+              .withSuccessHandler(resolve)
+              .withFailureHandler(reject)
+              .writeResults(data);
+          });
+          logStatus('Data written to sheet');
+        } else {
+          logStatus('No results to write');
+        }
+      } catch (err) {
+        logStatus('Error: ' + err.message);
+      }
+    }
+
+    runBtn.onclick = runQuery;
+    
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@latest/dist/duckdb-browser.js';
+    script.onload = loadDuckDB;
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>
