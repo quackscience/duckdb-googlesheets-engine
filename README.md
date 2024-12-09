@@ -7,10 +7,9 @@ https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQo
 #### Library
 - Open a Google Sheets document
 - Browse to `Extensions` > `Apps Script`
-- At the left of the Apps Script editor, next to "Libraries," click `Add`
-- In the "Script ID" field, paste `1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M`
-- Click `Look up`
-- Choose the latest version available
+- At the left of the Apps Script editor, next to `Libraries` click ➕
+- In the `Script ID` field, paste `1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M`
+- Click `Look up` and choose the latest version
 - Click `Add` and Authorize the Library
 
 ![image](https://gist.github.com/user-attachments/assets/7749d33b-bbc7-4247-a84d-d8a972a41cae)
