@@ -58,17 +58,22 @@
         logStatus('Executing query...');
         const conn = await db.connect();
         const result = await conn.query(query);
-        const data = result.toArray().map(row => Array.from(row));
+        const rawData = result.toArray().map(row => Array.from(row));
+        
+        // Extract just the values from each row
+        const processedData = rawData.map(row => {
+          return row.map(cell => cell[1]); // Take second element of each cell
+        });
         
         logStatus('Query results:');
-        logStatus(JSON.stringify(data, null, 2));
+        logStatus(JSON.stringify(processedData, null, 2));
 
-        if (data && data.length > 0) {
+        if (processedData && processedData.length > 0) {
           await new Promise((resolve, reject) => {
             google.script.run
               .withSuccessHandler(resolve)
               .withFailureHandler(reject)
-              .writeResults(data);
+              .writeResults(processedData);
           });
           logStatus('Data written to sheet');
         } else {
