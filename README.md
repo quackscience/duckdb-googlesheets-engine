@@ -1,8 +1,8 @@
+<img src="https://github.com/user-attachments/assets/46a5c546-7e9b-42c7-87f4-bc8defe674e0" width=250 />
+
 # Google Sheets DuckDB Engine
 
-## Extension Macro
-
-* https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M/6
+This little hack loads DuckDB WASM as a Google Sheets Library to execute, parse and return data
 
 ## Setup
 #### Install Extension
@@ -33,7 +33,12 @@ Type a query in a cell and execute it with DuckDB. Example:
 SELECT * FROM 'https://duckdb.org/data/schedule.csv'
 ```
 
-<img src="https://i.imgur.com/nRxtLUb.gif" />
+<img src="https://i.imgur.com/nRxtLUb.gif" width="800px" />
 
 
 
+
+### Extension Macro
+The following macro and the code in this repository are used as part of this demo
+
+* https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M/6
