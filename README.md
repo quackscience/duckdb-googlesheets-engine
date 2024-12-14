@@ -18,14 +18,6 @@ This little hack loads DuckDB WASM as a Google Sheets Library to execute, parse 
 ![image](https://github.com/user-attachments/assets/3a1a2945-0552-49fe-8246-4c96bb5f1609)
 
 <!--
-### Manual
-Browse to Extensions > Apps Script
-
-![image](https://gist.github.com/user-attachments/assets/827c4672-eef3-4179-bf77-70fb05c15c23)
-
-Copy the `.gs` + `.html` and Deploy as Library
-
-![image](https://gist.github.com/user-attachments/assets/1a04ace7-519c-4f22-b64a-9ffbc5d7277b)
 
 ### Extension Macro
 The following macro and the code in this repository are used as part of this demo
@@ -43,6 +35,20 @@ SELECT * FROM 'https://duckdb.org/data/schedule.csv'
 
 <img src="https://i.imgur.com/nRxtLUb.gif" width="800px" />
 
+<br />
+<br />
 
+## DIY Setup
+Follow these steps if you'd like to fork and create your own library based on this code. Not needed for testing.
 
+### Manual
+Browse to Extensions > Apps Script
+
+![image](https://github.com/user-attachments/assets/b2537c94-45f8-4884-9ba4-923adbc8e7dc)
+
+Copy the `.gs` + `.html` and Deploy as Library
+
+![image](https://github.com/user-attachments/assets/5e7c0e1a-2551-4e50-bf6a-a74136fea03e)
+
+> That's it! You can start using your own custom script in Google Sheets
 
