@@ -35,6 +35,12 @@ SELECT * FROM 'https://duckdb.org/data/schedule.csv'
 
 <img src="https://i.imgur.com/nRxtLUb.gif" width="800px" />
 
+### Todo
+
+* Add Query Form in the sidebar
+* Read Table into DuckDB memory
+* Add dropdown with quick examples
+
 <br />
 <br />
 
