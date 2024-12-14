@@ -2,7 +2,9 @@
 
 # Google Sheets DuckDB Engine
 
-This little hack loads DuckDB WASM as a Google Sheets Library to execute, parse and return data
+This little hack loads DuckDB WASM as a Google Sheets Library to execute, parse and return data.
+
+> No query data is sent to the extension, google or anywhere. Everything remains local.
 
 ## Setup
 #### Install Extension
