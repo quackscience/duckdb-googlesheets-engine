@@ -1,10 +1,11 @@
 # Google Sheets DuckDB Engine
 
-## Macro Library
-https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M/6
+## Extension Macro
 
-## Install
-#### Library
+* https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQoKAPueC_qdZzij3KkBc1M/6
+
+## Setup
+#### Install Extension
 - Open a Google Sheets document
 - Browse to `Extensions` > `Apps Script`
 - At the left of the Apps Script editor, next to `Libraries` click ➕
@@ -12,7 +13,7 @@ https://script.google.com/macros/library/d/1BacEJir06S0Kojb53TqhX6ECUO1tNZX6SbQo
 - Click `Look up` and choose the latest version
 - Click `Add` and Authorize the Library
 
-![image](https://gist.github.com/user-attachments/assets/7749d33b-bbc7-4247-a84d-d8a972a41cae)
+![image](https://github.com/user-attachments/assets/3a1a2945-0552-49fe-8246-4c96bb5f1609)
 
 <!--
 ### Manual
@@ -26,7 +27,7 @@ Copy the `.gs` + `.html` and Deploy as Library
 
 -->
 
-## Usage
+### Extension Usage
 Type a query in a cell and execute it with DuckDB. Example:
 ```
 SELECT * FROM 'https://duckdb.org/data/schedule.csv'
